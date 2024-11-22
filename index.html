@@ -5,62 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog personale</title>
     <style>
+        <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black;
+            background-color: #C6447B;
         }
         header {
-            background-color: #E87587;
+            background-color: #CC6CE7;
             color: black;
-            padding: 1rem;
+            padding: 1em 0;
             text-align: center;
         }
-        .container {
-            width: 81%;
-            margin: auto;
+        .carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: 20px auto;
             overflow: hidden;
+            border-radius: 10px;
         }
-        .bio {
-            background: #CECECE;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .carousel img {
+            width: 30%;
+            display: block;
         }
-        .bio img {
-            float: left;
-            margin-right: 1rem;
-            border-radius: 50%;
+        .carousel .prev, .carousel .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1em;
+            cursor: pointer;
         }
-        .bio h2 {
-            margin-top: 0;
+        .carousel .prev {
+            left: 10px;
         }
-        .clear {
-            clear: both;
+        .carousel .next {
+            right: 10px;
         }
+
     </style>
 </head>
 <body>
     <header>
         <h1>Blog personale</h1>
     </header>
+	 <div class="carousel">
+        <img src="https://th.bing.com/th/id/R.e62deebf6a072f2892f09288d8914756?rik=be%2bezLjV8GjRRQ&pid=ImgRaw&r=0" alt="Informatica">
+        <img src="https://www.seveninfinity.it/wp-content/uploads/2021/06/seven-infinity-nuoto-libero-scaled.jpg" alt="Nuoto">
+        <img src="https://th.bing.com/th/id/OIP.qJ0Y5tzIjbl2gOY7JdGjOAHaEK?rs=1&pid=ImgDetMain" alt="Alternanza scuola-lavoro">
+        <button class="prev" onclick="prevImage()">&#10094;</button>
+        <button class="next" onclick="nextImage()">&#10095;</button>
+    </div>
+
     <div class="container">
         <div class="bio">
-            <img src="foto.jpg" alt="hhh" width="170">
+            <img src="io.jpg" alt="hhh" width="50%" height="auto">
             <h2>Miriana Guida</h2>
             <p>Ciao a tutti, sono Miriana Guida, ho 18 anni e sono una ragazza semplice, che ama stare con il suo gruppo di amici. 
-				Avevo una passione che tutt'ora è quella del nuoto, l'unico sport che io abbia mai praticato.</p>
+				Avevo una passione che tutt'ora è quella del nuoto, l'unico sport che io abbia mai praticato.
+				L'ho praticato per 4 anni poi per motivi di trasporto ho dovuto lasciare, quando entro in acqua mi sento libera e non penso a
+				tutto quello che c'è al di fuori della piscina.
+				Frequento l'I.I.S EINSTEIN - DE LORENZO, sono al quarto anno dell'indirizzo di informatica.
+				La mia scuola e soprattutto il mio indirizzo sono molto cercati nelle aziende perciò non abbiami bisogno poi dopo il diploma 
+				di proseguire con lo studio.</p>
             <div class="clear"></div>
         </div>
-        <div class="bio">
-            <img src="OIP.jpg" alt="Piscina splash" width="230">
-            <h2>...</h2>
-            <p>Non ho mai amato lo sport e praticarlo ma avevo una passione che tutt'ora ho quella del nuoto, l'unico sport che io abbia mai praticato il nuoto.
-				L'ho praticato per 4 anni poi per motivi di trasporto ho dovuto lasciare, quando entro in acqua mi sento libera e non penso a
-				tutto quello che c'è al di fuori della piscina.</p>
-            <div class="clear"></div>
         </div>
     </div>
 </body>
