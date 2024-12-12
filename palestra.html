@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palestra Fitness</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 85%;
+        }
+        .carousel img {
+            width: 85%;
+            transition: transform 0.5s ease;
+        }
+		carousel img {
+            width: 85%;
+            transition: transform 0.5s ease;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: balck;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .table-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: pink;
+        }
+    </style>
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel img');
+            if (index >= slides.length) currentIndex = 0;
+            if (index < 0) currentIndex = slides.length - 1;
+            slides.forEach((img, i) => {
+                img.style.transform = `translateX(${-100 * currentIndex}%)`;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.prev').addEventListener('click', () => {
+                currentIndex--;
+                showSlide(currentIndex);
+            });
+
+            document.querySelector('.next').addEventListener('click', () => {
+                currentIndex++;
+                showSlide(currentIndex);
+            });
+
+            showSlide(currentIndex);
+        });
+    </script>
+</head>
+<body>
+    <h1>Benvenuti alla Palestra Fitness</h1>
+
+    <!-- Carosello di immagini -->
+    <div class="carousel-container">
+        <button class="carousel-button prev">&#10094;</button>
+        <div class="carousel">
+            <img src="palestra.jpg" alt="Immagine 1">
+            <img src="palestra2.jpg" alt="Immagine 2">
+            <img src="palestra3.jpg" alt="Immagine 3">
+        </div>
+        <button class="carousel-button next">&#10095;</button>
+    </div>
+
+    <!-- Tabella degli orari -->
+    <div class="table-container">
+        <h2>Orari e Giorni di Apertura</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Giorno</th>
+                    <th>Orario di apertura</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lunedì</td>
+                    <td>14:00 - 20:00</td>
+                </tr>
+                <tr>
+                    <td>Martedì</td>
+                    <td>14:00 - 20:00</td>
+                </tr>
+                <tr>
+                    <td>Mercoledì</td>
+                    <td>14:00 - 20:00</td>
+                </tr>
+                <tr>
+                    <td>Giovedì</td>
+                    <td>10:00 - 20:00</td>
+                </tr>
+                <tr>
+                    <td>Venerdì</td>
+                    <td>14:00 - 20:00</td>
+                </tr>
+                <tr>
+                    <td>Sabato</td>
+                    <td>Chiuso!!!</td>
+                </tr>
+                <tr>
+                    <td>Domenica</td>
+                    <td>Chiuso!!!</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
